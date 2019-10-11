@@ -18,33 +18,33 @@
  var costmagnp = 500
  //-----------------------------------
  var ClickValue = 1;
- var p = document.querySelector('p');
+ var h2 = document.querySelector('h2');
  function wyswietl(){
      var przechowaj = Defvalue;
      if(przechowaj >= 1e3 && przechowaj < 1e6){ 
-         p.textContent = (przechowaj/1e3).toFixed(2)+" Thousand";
+         h2.textContent = (przechowaj/1e3).toFixed(2)+" Thousand";
      }else if(przechowaj >= 1e6 && przechowaj < 1e9){ 
-         p.textContent = (przechowaj/1e6).toFixed(2)+" Milion";
+         h2.textContent = (przechowaj/1e6).toFixed(2)+" Milion";
      }else if(przechowaj >= 1e9 && przechowaj < 1e12){ 
-         p.textContent = (przechowaj/1e9).toFixed(2)+" Bilion";
+         h2.textContent = (przechowaj/1e9).toFixed(2)+" Bilion";
      }else if(przechowaj >= 1e12 && przechowaj < 1e15){ 
-         p.textContent = (przechowaj/1e12).toFixed(2)+" Trilion";
+         h2.textContent = (przechowaj/1e12).toFixed(2)+" Trilion";
      }else if(przechowaj >= 1e15 && przechowaj < 1e18){ 
-         p.textContent = (przechowaj/1e15).toFixed(2)+" Quadrilion";
+         h2.textContent = (przechowaj/1e15).toFixed(2)+" Quadrilion";
      }else if(przechowaj >= 1e18 && przechowaj < 1e21){ 
-         p.textContent = (przechowaj/1e18).toFixed(2)+" Pentilion";
+         h2.textContent = (przechowaj/1e18).toFixed(2)+" Pentilion";
      }else if(przechowaj >= 1e21 && przechowaj < 1e24){ 
-         p.textContent = (przechowaj/1e21).toFixed(2)+" Sextilion";
+         h2.textContent = (przechowaj/1e21).toFixed(2)+" Sextilion";
      }else if(przechowaj >= 1e24 && przechowaj < 1e27){ 
-         p.textContent = (przechowaj/1e24).toFixed(2)+" Septilion";
+         h2.textContent = (przechowaj/1e24).toFixed(2)+" Septilion";
      }else if(przechowaj >= 1e27 && przechowaj < 1e30){ 
-         p.textContent = (przechowaj/1e27).toFixed(2)+" Octilion";
+         h2.textContent = (przechowaj/1e27).toFixed(2)+" Octilion";
      }else if(przechowaj >= 1e30 && przechowaj < 1e33){ 
-         p.textContent = (przechowaj/1e30).toFixed(2)+" Nonilion";
+         h2.textContent = (przechowaj/1e30).toFixed(2)+" Nonilion";
      }else if(przechowaj >= 1e33){ 
-         p.textContent = (przechowaj/1e33).toFixed(2)+" Decilion";
+         h2.textContent = (przechowaj/1e33).toFixed(2)+" Decilion";
      }else {
-         p.textContent = przechowaj;
+         h2.textContent = przechowaj;
      }
  }
  function clicker(){
