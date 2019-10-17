@@ -34,4 +34,6 @@ else {
 
 }
 
+require 'footer.php'; 
+
 ?>

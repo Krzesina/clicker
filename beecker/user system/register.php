@@ -67,4 +67,5 @@ if ($_POST['send'] == 1) {
 </form>
 
 <?php
+require 'footer.php'; 
 ?>
