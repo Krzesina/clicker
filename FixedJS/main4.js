@@ -5,7 +5,7 @@ let pszczoly = [
     { nazwa: "Super Pszczola",  cena: 100,   coIle: 1000, ile: 0 },
     { nazwa: "SSJPszczola",     cena: 300,   coIle: 800,  ile: 0 },
     { nazwa: "Magnum Pszczola", cena: 500,   coIle: 500,  ile: 0 },
-    { nazwa: "Papiesh Pszczola", cena: 2137, coIle: 200,  ile: 0 },
+    { nazwa: "Pronto Pszczola", cena: 1000,  coIle: 100,  ile: 0 },
 ]
 
 let clickCost = 5;
