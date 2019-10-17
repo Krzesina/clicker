@@ -61,6 +61,4 @@ else {
 
 <?php
 }
-
-require 'footer.php'; 
 ?>
