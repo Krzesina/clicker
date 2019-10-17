@@ -4,7 +4,7 @@
 $cfg['db_server'] = 'localhost'; 
 $cfg['db_user'] = 'root'; 
 $cfg['db_pass'] = ''; 
-$cfg['db_name'] = 'user-system'; 
+$cfg['db_name'] = 'user system'; 
 
 
 
