@@ -7,7 +7,7 @@ require_once 'user.class.php';
 
 if ($_POST['send'] == 1) {
     
-    $login = mysqli_real_escape_string(htmlspecialchars($_POST['login']));
+    $login = mysqli_real_escape_string($conn, htmlspecialchars($_POST['login']));
     $pass = mysqli_real_escape_string(htmlspecialchars($_POST['pass']));
     $pass_v = mysqli_real_escape_string(htmlspecialchars($_POST['pass_v']));
     $email = mysqli_real_escape_string(htmlspecialchars($_POST['email']));
