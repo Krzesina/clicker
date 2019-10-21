@@ -9,8 +9,8 @@ require 'config.php';
 require_once 'user.class.php'; 
 
 
-$login = htmlspecialchars(mysql_real_escape_string($_POST['login']));
-$pass = mysql_real_escape_string($_POST['pass']);
+$login = htmlspecialchars(mysqli_real_escape_string($_POST['login']));
+$pass = mysqli_real_escape_string($_POST['pass']);
 
 if ($_POST['send'] == 1) {
    
@@ -25,7 +25,7 @@ if ($_POST['send'] == 1) {
     $pass = user::passSalter($pass); 
     
    
-    $userExists = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM users WHERE login = '$login' AND pass = '$pass'"));
+    $userExists = mysqli_fetch_array(mysqli_query("SELECT COUNT(*) FROM users WHERE login = '$login' AND pass = '$pass'"));
 
     if ($userExists[0] == 0) {
         
