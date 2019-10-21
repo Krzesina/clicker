@@ -1,11 +1,13 @@
 let money = 0
 
 let pszczoly = [
-    { nazwa: "Pszczola",        cena: 10,    coIle: 2000, ile: 0 },
-    { nazwa: "Super Pszczola",  cena: 100,   coIle: 1000, ile: 0 },
-    { nazwa: "SSJPszczola",     cena: 300,   coIle: 800,  ile: 0 },
-    { nazwa: "Magnum Pszczola", cena: 500,   coIle: 500,  ile: 0 },
-    { nazwa: "Pronto Pszczola", cena: 1000,  coIle: 100,  ile: 0 },
+    { nazwa: "Pszczola",             cena: 10,    coIle: 2000, ile: 0 },
+    { nazwa: "Super Pszczola",       cena: 100,   coIle: 1000, ile: 0 },
+    { nazwa: "SSJPszczola",          cena: 300,   coIle: 800,  ile: 0 },
+    { nazwa: "Magnum Pszczola",      cena: 500,   coIle: 500,  ile: 0 },
+    { nazwa: "Pronto Pszczola",      cena: 1000,  coIle: 100,  ile: 0 },
+    { nazwa: "Mistrzowska Pszczola", cena: 2000,  coIle: 50,   ile: 0 },
+    { nazwa: "J.K - Bzykke",         cena: 5000,  coIle: 10,   ile: 0 },
 ]
 
 let clickCost = 5;
@@ -38,6 +40,23 @@ function wyswietl(){
         p.textContent = (przechowaj/1e33).toFixed(2)+" Decilion";
     } else {
         p.textContent = przechowaj;
+    }
+    Bps();
+    let p4 = document.querySelector('p4');
+    if (pszczoly[0].ile >= 10){
+        p4.textContent = "Beecome a Beecker!"
+    } if (pszczoly[1].ile >= 10){
+        p4.textContent = "Just Bee Yourself!"
+    } if (pszczoly[2].ile >= 10){
+        p4.textContent = "Beefriend Me!"
+    } if (pszczoly[3].ile >= 10){
+        p4.textContent = "Are you Beesexual?"
+    } if (pszczoly[4].ile >= 10){
+        p4.textContent = "Bee Me, Me Bee"
+    } if (pszczoly[5].ile >= 10){
+        p4.textContent = "Bee My BeeMaster!"
+    } if (pszczoly[6].ile >= 10){
+        p4.textContent = "WOLNY BZYNEK!"
     }
 }
 function clicker(){
@@ -75,5 +94,14 @@ for (let i = 0; i < pszczoly.length; i++) {
         wyswietl()
     }, pszczola.coIle)
 }
+function Bps(){
+    let Bps = 0;
+    for (let i = 0; i < pszczoly.length; i++) {
+        Bps += 1000 / pszczoly[i].coIle * pszczoly[i].ile
+    }
+    let p3 = document.querySelector('p3');
+    p3.textContent = "Bps: " + Bps;
+}
+
 
 
