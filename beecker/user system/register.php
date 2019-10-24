@@ -7,11 +7,11 @@ require_once 'user.class.php';
 
 if ($_POST['send'] == 1) {
     
-    $login = mysqli_real_escape_string(htmlspecialchars($_POST['login']));
-    $pass = mysqli_real_escape_string(htmlspecialchars($_POST['pass']));
-    $pass_v = mysqli_real_escape_string(htmlspecialchars($_POST['pass_v']));
-    $email = mysqli_real_escape_string(htmlspecialchars($_POST['email']));
-    $email_v = mysqli_real_escape_string(htmlspecialchars($_POST['email_v']));
+    $login = mysqli_real_escape_string($conn, htmlspecialchars($_POST['login']));
+    $pass = mysqli_real_escape_string($conn, htmlspecialchars($_POST['pass']));
+    $pass_v = mysqli_real_escape_string($conn, htmlspecialchars($_POST['pass_v']));
+    $email = mysqli_real_escape_string($conn, htmlspecialchars($_POST['email']));
+    $email_v = mysqli_real_escape_string($conn, htmlspecialchars($_POST['email_v']));
 
   
     $existsLogin = mysqli_fetch_array(mysqli_query("SELECT COUNT(*) FROM users WHERE login='$login' LIMIT 1"));
