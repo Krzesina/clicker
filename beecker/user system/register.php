@@ -14,8 +14,8 @@ if ($_POST['send'] == 1) {
     $email_v = mysqli_real_escape_string($conn, htmlspecialchars($_POST['email_v']));
 
   
-    $existsLogin = mysqli_fetch_array(mysqli_query("SELECT COUNT(*) FROM users WHERE login='$login' LIMIT 1"));
-    $existsEmail = mysqli_fetch_array(mysqli_query("SELECT COUNT(*) FROM users WHERE email='$email' LIMIT 1"));
+    $existsLogin = mysqli_fetch_array(mysqli_query($conn, "SELECT COUNT(*) FROM users WHERE login='$login' LIMIT 1"));
+    $existsEmail = mysqli_fetch_array(mysqli_query($conn, "SELECT COUNT(*) FROM users WHERE email='$email' LIMIT 1"));
 
     $errors = ''; 
 
@@ -37,7 +37,7 @@ if ($_POST['send'] == 1) {
 
         $pass = user::passSalter($pass);
 
-        mysqli_query("INSERT INTO users (login, email, pass) VALUES('$login','$email','$pass');") or die ('<p class="error">Wystąpił błąd w zapytaniu i nie udało się zarejestrować użytkownika.</p>');
+        mysqli_query($conn, "INSERT INTO users (login, email, pass) VALUES('$login','$email','$pass');") or die ('<p class="error">Wystąpił błąd w zapytaniu i nie udało się zarejestrować użytkownika.</p>');
 
         echo '<p class="success">'.$login.', zostałeś zarejestrowany.
         <br /><a href="login.php">Logowanie</a></p>';
