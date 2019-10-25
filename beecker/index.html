@@ -61,14 +61,16 @@
 
   <section class="section">
       <div class="container">
-        <div class="col-lg-8 col-md-8 col-sm-12 pad" data-effect="slide-top">
-            <h2>0</h2>
-        </div>
-        <div class="col-lg-8 col-md-8 col-sm-12 pad" data-effect="slide-left">
+        <div class="col-lg-6 col-md-6 col-sm-12 pad" data-effect="slide-top">
+            <h2 class="currentvalue">0</h2>
+            <h2 class="wskaznik">0</h2>
+            <h2 class="wskaznik3">0</h2>
+            <h2 class="currentvalue">0</h2>
+            <h2 class="currentvalue">0</h2>
             <img id="btn" class="beebutton" src="img/bee.jpg" onclick="beeanimate(); clicker()">
         </div>
         <!-- mainbee -->
-        <div class="addons col-lg-4 col-md-4 col-sm-12 align-center" data-effect="slide-right">
+        <div class="addons col-lg-3 col-md-3 col-sm-6 align-center" data-effect="slide-bottom">
             <h4>Addons</h4>
             <div class="addons-container">
               <div class="addon-content">
@@ -107,6 +109,44 @@
         <!-- addons -->
       </div>
       <!-- end container -->
+      <div class="addons col-lg-3 col-md-3 col-sm-6 align-center" data-effect="slide-right">
+        <h4>Addons</h4>
+        <div class="addons-container">
+          <div class="addon-content">
+            <div class="addon-item">
+              <button id="addon-btn btn1" onclick="PerClick()">ClickMagnituder</button>
+            </div>
+            <div class="addon-item">
+              <p2>Wartość kliknięcia:1 Cena:5</p2>
+            </div>
+            <div class="addon-item">
+              <button id="addon-btn btn2" onclick="startpszczola()">Pszczola</button>
+            </div>
+            <div class="addon-item">
+              <p1>Ilość pszczół:0 Cena:10</p1>
+            </div>
+            <div class="addon-item">
+              <button id="addon-btn btn3" onclick="startsuperpszczola()">SuperPszczola</button>
+            </div>
+            <div class="addon-item">
+              <p3>Ilość pszczół:0 Cena:100</p3>
+            </div>
+            <div class="addon-item">
+              <button id="addon-btn btn4" onclick="startssjpszczola()">SSJPszczola</button>
+            </div>
+            <div class="addon-item">
+              <p4>Ilość pszczół:0 Cena:300</p4>
+            </div>
+            <div class="addon-item">
+              <button id="addon-btn btn5" onclick="startmagnpszczola()">MagnumPszczola</button>
+            </div>
+            <div class="addon-item">
+              <p5>Ilość pszczół:0 Cena:500</p5>
+            </div>
+        </div>
+    </div>
+    <!-- addons -->
+  </div>
     </section>
     <!-- end section -->
 
