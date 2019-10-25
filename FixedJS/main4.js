@@ -52,21 +52,21 @@ function wyswietl() {
         p.textContent = przechowaj;
     }
     Bps();
-    let p4 = document.querySelector('p4');
+    let wskazanie = document.querySelector('.wskaznik');
     if (pszczoly[0].ile >= 10) {
-        p4.textContent = "Beecome a Beecker!"
+        wskazanie.textContent = "Beecome a Beecker!"
     } if (pszczoly[1].ile >= 10) {
-        p4.textContent = "Just Bee Yourself!"
+        wskazanie.textContent = "Just Bee Yourself!"
     } if (pszczoly[2].ile >= 10) {
-        p4.textContent = "Beefriend Me!"
+        wskazanie.textContent = "Beefriend Me!"
     } if (pszczoly[3].ile >= 10) {
-        p4.textContent = "Are you Beesexual?"
+        wskazanie.textContent = "Are you Beesexual?"
     } if (pszczoly[4].ile >= 10) {
-        p4.textContent = "Bee Me, Me Bee"
+        wskazanie.textContent = "Bee Me, Me Bee"
     } if (pszczoly[5].ile >= 10) {
-        p4.textContent = "Bee My BeeMaster!"
+        wskazanie.textContent = "Bee My BeeMaster!"
     } if (pszczoly[6].ile >= 10) {
-        p4.textContent = "WOLNY BZYNEK!"
+        wskazanie.textContent = "WOLNY BZYNEK!"
     }
 }
 function clicker() {
@@ -79,8 +79,8 @@ function perClick() {
         money -= clickCost;
         clickCost = clickValue * clickValue;
         wyswietl();
-        let p2 = document.querySelector('p2');
-        p2.textContent = "Wartość kliknięcia:" + clickValue + " Cena:" + clickCost;
+        let wskazanie2 = document.querySelector('wskaznik2');
+        wskazanie2.textContent = "Wartość kliknięcia:" + clickValue + " Cena:" + clickCost;
     }
 }
 let divs = document.querySelectorAll('.pszczola')
@@ -136,8 +136,8 @@ function Bps() {
     for (let i = 0; i < pszczoly.length; i++) {
         Bps += 1000 / pszczoly[i].coIle * pszczoly[i].ile
     }
-    let p3 = document.querySelector('p3');
-    p3.textContent = "Bps: " + Bps;
+    let wskazanie3 = document.querySelector('wskaznik3');
+    wskazanie3.textContent = "Bps: " + Bps;
 }
 
 
