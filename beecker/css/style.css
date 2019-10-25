@@ -529,13 +529,20 @@ button:hover, button:focus, .button:hover, .button:focus {
   list-style: none;
 }
 /* bee */
-.mainbee{
+.beebutton{
   height: 600px;
   width: 100%;
 }
+.beeanimation {
+  animation-name: example;
+  animation-duration: .4s;
+  animation-iteration-count: 1;
+}
 
-.scaled{
-
+@keyframes example {
+	0% {transform: scale(1)}
+	50% {transform: scale(0.95)}
+	100% {transform: scale(1)}
 }
 
 .pad {
@@ -550,6 +557,7 @@ button:hover, button:focus, .button:hover, .button:focus {
   background: #f1c40f;
   text-align: center;
   color: #fff;
+  padding: 0px 5px 5px 5px;
   
 }
 @media (min-width: 991px) {
@@ -558,7 +566,7 @@ button:hover, button:focus, .button:hover, .button:focus {
   }
 }
 .addon-content{
-  border: 0.5px solid #2B2E31;
+  border: 0.5px solid #f1c40f;
   border-radius: 5px;
   padding: 4px 4px;
   background: #fff;
