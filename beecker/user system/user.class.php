@@ -10,14 +10,14 @@ class user {
         if ($login == '') $login = $_SESSION['login'];
         if ($pass == '') $pass = $_SESSION['pass'];
 
-        self::$user = mysqli_fetch_array(mysqli_query("SELECT * FROM users WHERE login='$login' AND pass='$pass' LIMIT 1;"));
+        self::$user = mysql_fetch_array(mysql_query("SELECT * FROM users WHERE login='$login' AND pass='$pass' LIMIT 1;"));
         return self::$user;
     }
 
     
   
     public function getDataById ($id) {
-        $user = mysqli_fetch_array(mysqli_query("SELECT * FROM users WHERE id='$id' LIMIT 1;"));
+        $user = mysql_fetch_array(mysql_query("SELECT * FROM users WHERE id='$id' LIMIT 1;"));
         return $user;
     }
 

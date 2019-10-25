@@ -15,7 +15,7 @@ else {
     $id = $_GET['id'];
 
   
-    $userExist = mysqli_fetch_array(mysqli_query("SELECT COUNT(*) FROM users WHERE id = '$id'"));
+    $userExist = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM users WHERE id = '$id'"));
 
   
     if ($userExist[0] == 0) {
@@ -33,5 +33,7 @@ else {
     echo '<b>Email:</b> '.$profile['email'].'<br />';
 
 }
+
+require 'footer.php'; 
 
 ?>
