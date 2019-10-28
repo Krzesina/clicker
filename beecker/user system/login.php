@@ -9,10 +9,12 @@ require 'config.php';
 require_once 'user.class.php'; 
 
 
-$login = htmlspecialchars(mysql_real_escape_string($_POST['login']));
-$pass = mysql_real_escape_string($_POST['pass']);
 
-if ($_POST['send'] == 1) {
+
+if (isset($_POST['send'] )) {
+    
+    $login = (htmlspecialchars(mysqli_real_escape_string($conn, $_POST['login'])));
+    $pass = mysqli_real_escape_string($conn, $_POST['pass']);
    
     if (!$login or empty($login)) {
         die ('<p class="error">Wypełnij pole z loginem!</p>');
@@ -25,7 +27,7 @@ if ($_POST['send'] == 1) {
     $pass = user::passSalter($pass); 
     
    
-    $userExists = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM users WHERE login = '$login' AND pass = '$pass'"));
+    $userExists = mysqli_fetch_array(mysqli_query($conn, "SELECT COUNT(*) FROM users WHERE login = '$login' AND pass = '$pass'"));
 
     if ($userExists[0] == 0) {
         
@@ -61,6 +63,4 @@ else {
 
 <?php
 }
-
-require 'footer.php'; 
 ?>
