@@ -79,7 +79,7 @@ function perClick() {
         money -= clickCost;
         clickCost = clickValue * clickValue;
         wyswietl();
-        let wskazanie2 = document.querySelector('wskaznik2');
+        let wskazanie2 = document.querySelector('.wskaznik2');
         wskazanie2.textContent = "Wartość kliknięcia:" + clickValue + " Cena:" + clickCost;
     }
 }
@@ -136,9 +136,7 @@ function Bps() {
     for (let i = 0; i < pszczoly.length; i++) {
         Bps += 1000 / pszczoly[i].coIle * pszczoly[i].ile
     }
-    let wskazanie3 = document.querySelector('wskaznik3');
+    let wskazanie3 = document.querySelector('.wskaznik3');
     wskazanie3.textContent = "Bps: " + Bps;
 }
-
-
 
