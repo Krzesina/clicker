@@ -1,10 +1,3 @@
-/**
-* Template Name: MaxiBiz
-* Template URL: https://templatemag.com/maxibiz-bootstrap-business-template/
-* Author: TemplateMag.com
-* License: https://templatemag.com/license/
-*/
-
 * {
   margin: 0;
   padding: 0px;
@@ -551,7 +544,7 @@ button:hover, button:focus, .button:hover, .button:focus {
 }
 
 /* addons */
-.addons, .upgrades{
+.addons{
   border: 1px solid #f1c40f;
   border-radius: 5px;
   background: #f1c40f;
@@ -565,7 +558,7 @@ button:hover, button:focus, .button:hover, .button:focus {
     padding: 0 15px;
   }
 }
-.addon-content, .upgrades-content{
+.addon-content{
   border: 0.5px solid #f1c40f;
   border-radius: 5px;
   padding: 4px 4px;
@@ -584,6 +577,11 @@ button:hover, button:focus, .button:hover, .button:focus {
 }
 
 .addon-item button{
+  margin: 2px 0 0 0;
+}
+
+.addon-item p{
+  color: black;
   margin: 0px;
 }
 
