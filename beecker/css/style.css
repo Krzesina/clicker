@@ -558,17 +558,22 @@ button:hover, button:focus, .button:hover, .button:focus {
     padding: 0 15px;
   }
 }
-.addon-content{
+
+.addon-content, .upgrade-content{
   border: 0.5px solid #f1c40f;
   border-radius: 5px;
   padding: 4px 4px;
   background: #fff;
-  text-align: center;
   display: flex;
-  flex-direction: column;
   color: #2B2E31;
-  align-items: start;
+}
+.addon-content{
+  flex-direction: column;
+  text-align: left;
+}
 
+.upgrade-content{
+  flex-direction: row !important;
 }
 
 .addon-item{
@@ -583,6 +588,20 @@ button:hover, button:focus, .button:hover, .button:focus {
 .addon-item p{
   color: black;
   margin: 0px;
+  font-size: 80%;
 }
+
+.upgrade-item{
+  text-align: left;
+}
+
+.upgrade-item:hover{
+  width: 100px;
+}
+
+.upgrade-item img{
+  height: 40px;
+}
+
 
 

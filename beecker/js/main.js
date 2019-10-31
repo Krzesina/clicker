@@ -47,8 +47,10 @@ function wyswietl() {
         currentmoney.textContent = (przechowaj / 1e27).toFixed(2) + " Octilion";
     } else if (przechowaj >= 1e30 && przechowaj < 1e33) {
         currentmoney.textContent = (przechowaj / 1e30).toFixed(2) + " Nonilion";
-    } else if (przechowaj >= 1e33) {
+    } else if (przechowaj >= 1e33 && przechowaj <1e39) {
         currentmoney.textContent = (przechowaj / 1e33).toFixed(2) + " Decilion";
+    } else if (przechowaj >= 1e39) {
+            currentmoney.textContent = " Infinity";
     } else {
         currentmoney.textContent = przechowaj;
     }
@@ -96,8 +98,8 @@ for (let i = 0; i < divs.length; i++) {
             pszczola.cena = Math.round(pszczola.cena * 1.3)
             wyswietl();
             console.log(divs[i])
-            let cenapszczoly = divs[i].querySelector('.cenapszczoly');
-            cenapszczoly.textContent = "Ilość pszczół:" + pszczola.ile + " Cena pszczoły:" + pszczola.cena;
+            let p = divs[i].querySelector('p');
+            p.textContent = "Ilość pszczół:" + pszczola.ile + " Cena:" + pszczola.cena;
         }
     })
 
@@ -108,7 +110,7 @@ for (let i = 0; i < divs.length; i++) {
 }
 for (let i = 0; i < divs2.length; i++) {
     let upgrader = upgrade[i]
-    const btn = divs2[i].querySelector('button')
+    const btn = divs2[i].querySelector('img')
     btn.addEventListener('click', () => {
         if (money >= upgrader.cena) {
             upgrader.ile += 1;
@@ -123,7 +125,7 @@ for (let i = 0; i < divs2.length; i++) {
                 }, pszczoly[i].coIle)
             } else {
                 if (!btn.wyczerpany) {
-                    btn.querySelector('img').src = "Deny.png"
+                    btn.querySelector('img').src = "img/pixelart/Deny.png"
                     btn.wyczerpany = true
                 }
             }
