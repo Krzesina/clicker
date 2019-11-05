@@ -574,6 +574,8 @@ button:hover, button:focus, .button:hover, .button:focus {
 
 .upgrade-content{
   flex-direction: row !important;
+  align-content: flex-start;
+  flex-flow: wrap;
 }
 
 .addon-item{
@@ -592,16 +594,48 @@ button:hover, button:focus, .button:hover, .button:focus {
 }
 
 .upgrade-item{
-  text-align: left;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  width: 40px;
 }
 
 .upgrade-item:hover{
-  width: 100px;
-}
-
-.upgrade-item img{
+  text-align: left;
+  background-color: black;
   height: 40px;
+  width: max-content;
 }
 
+.upgrade-item:hover .xd{
+  display: block;
+  color:white;
+  padding: 1px;
+  max-height: 40px;
+  width: fit-content;
+  border: 0.5px solid black;
+  border-radius: 5px;
+}
 
+.upgrade-item button{
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+}
+
+.upgrade-item button img{
+  height: 40px;
+  width: 40px;
+}
+
+.xd{
+  display: none;
+  font-size: 80%;
+  line-height: 100%;
+  margin: 0px;
+  padding: 1px;
+}
+.upgrade-flex{
+  width: max-content;
+}
 
