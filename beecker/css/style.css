@@ -564,23 +564,19 @@ button:hover, button:focus, .button:hover, .button:focus {
   border-radius: 5px;
   padding: 4px 4px;
   background: #fff;
-  display: flex;
   color: #2B2E31;
 }
 .addon-content{
+  display: flex;
   flex-direction: column;
   text-align: left;
 }
 
 .upgrade-content{
-  flex-direction: row !important;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   align-content: flex-start;
-  flex-flow: wrap;
-}
-
-.addon-item{
-  list-style-type:none;
-  margin-top: 2px;
 }
 
 .addon-item button{
@@ -635,7 +631,3 @@ button:hover, button:focus, .button:hover, .button:focus {
   margin: 0px;
   padding: 1px;
 }
-.upgrade-flex{
-  width: max-content;
-}
-

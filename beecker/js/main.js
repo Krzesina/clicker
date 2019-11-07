@@ -115,7 +115,7 @@ for (let i = 0; i < divs2.length; i++) {
         if (money >= upgrader.cena) {
             upgrader.ile += 1;
 
-            if (upgrader.ile <= 1) {
+            if (upgrader.ile === 0) {
                 money -= upgrader.cena;
                 pszczoly[i].coIle /= 2
                 clearInterval(pszczoly[i].interval)
@@ -125,7 +125,8 @@ for (let i = 0; i < divs2.length; i++) {
                 }, pszczoly[i].coIle)
             } else {
                 if (!btn.wyczerpany) {
-                    btn.querySelector('img').src = "img/pixelart/Deny.png"
+                    console.log(btn.parentElement.parentElement.querySelector('.xd').classList.add('hidden'))
+                    btn.src = "img/pixelart/Deny.png"
                     btn.wyczerpany = true
                 }
             }
