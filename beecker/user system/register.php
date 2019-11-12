@@ -5,17 +5,17 @@ require 'header.php';
 require 'config.php'; 
 require_once 'user.class.php';
 
-if (isset($_POST['send'])) {
+if ($_POST['send'] == 1) {
     
-    $login = mysqli_real_escape_string($conn, htmlspecialchars($_POST['login']));
-    $pass = mysqli_real_escape_string($conn, htmlspecialchars($_POST['pass']));
-    $pass_v = mysqli_real_escape_string($conn, htmlspecialchars($_POST['pass_v']));
-    $email = mysqli_real_escape_string($conn, htmlspecialchars($_POST['email']));
-    $email_v = mysqli_real_escape_string($conn, htmlspecialchars($_POST['email_v']));
+    $login = mysql_real_escape_string(htmlspecialchars($_POST['login']));
+    $pass = mysql_real_escape_string(htmlspecialchars($_POST['pass']));
+    $pass_v = mysql_real_escape_string(htmlspecialchars($_POST['pass_v']));
+    $email = mysql_real_escape_string(htmlspecialchars($_POST['email']));
+    $email_v = mysql_real_escape_string(htmlspecialchars($_POST['email_v']));
 
   
-    $existsLogin = mysqli_fetch_array(mysqli_query($conn, "SELECT COUNT(*) FROM users WHERE login='$login' LIMIT 1"));
-    $existsEmail = mysqli_fetch_array(mysqli_query($conn, "SELECT COUNT(*) FROM users WHERE email='$email' LIMIT 1"));
+    $existsLogin = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM users WHERE login='$login' LIMIT 1"));
+    $existsEmail = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM users WHERE email='$email' LIMIT 1"));
 
     $errors = ''; 
 
@@ -37,7 +37,7 @@ if (isset($_POST['send'])) {
 
         $pass = user::passSalter($pass);
 
-        mysqli_query($conn, "INSERT INTO users (login, email, pass) VALUES('$login','$email','$pass');") or die ('<p class="error">Wystąpił błąd w zapytaniu i nie udało się zarejestrować użytkownika.</p>');
+        mysql_query("INSERT INTO users (login, email, pass) VALUES('$login','$email','$pass');") or die ('<p class="error">Wystąpił błąd w zapytaniu i nie udało się zarejestrować użytkownika.</p>');
 
         echo '<p class="success">'.$login.', zostałeś zarejestrowany.
         <br /><a href="login.php">Logowanie</a></p>';
@@ -67,4 +67,5 @@ if (isset($_POST['send'])) {
 </form>
 
 <?php
+require 'footer.php'; 
 ?>

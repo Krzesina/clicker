@@ -24,4 +24,6 @@ else {
     echo '<p>Nie jesteś zalogowany.<br /><a href="login.php">Zaloguj</a> się lub <a href="register.php">zarejestruj</a> jeśli jeszcze nie masz konta.</p>';
 }
 
+require 'footer.php';
+
 ?>

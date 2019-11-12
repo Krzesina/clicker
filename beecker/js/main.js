@@ -1,146 +1,146 @@
- //Glowna zmienna
- var Defvalue = 0;
- //zmienne do intervali
- var t;
- var t1;
- var t2;
- var t3;
- //zmienne do pszczół
- var pszczeliczba=0;
- var spszczeliczba=0;
- var ssjpszczeliczba=0;
- var magnpszczeliczba=0;
- //zmienne do cen
- var costp = 10;
- var costc = 5;
- var costsp = 100;
- var costssjp = 300;
- var costmagnp = 500
- //-----------------------------------
- var ClickValue = 1;
- var h2 = document.querySelector('h2');
- function wyswietl(){
-     var przechowaj = Defvalue;
-     if(przechowaj >= 1e3 && przechowaj < 1e6){ 
-         h2.textContent = (przechowaj/1e3).toFixed(2)+" Thousand";
-     }else if(przechowaj >= 1e6 && przechowaj < 1e9){ 
-         h2.textContent = (przechowaj/1e6).toFixed(2)+" Milion";
-     }else if(przechowaj >= 1e9 && przechowaj < 1e12){ 
-         h2.textContent = (przechowaj/1e9).toFixed(2)+" Bilion";
-     }else if(przechowaj >= 1e12 && przechowaj < 1e15){ 
-         h2.textContent = (przechowaj/1e12).toFixed(2)+" Trilion";
-     }else if(przechowaj >= 1e15 && przechowaj < 1e18){ 
-         h2.textContent = (przechowaj/1e15).toFixed(2)+" Quadrilion";
-     }else if(przechowaj >= 1e18 && przechowaj < 1e21){ 
-         h2.textContent = (przechowaj/1e18).toFixed(2)+" Pentilion";
-     }else if(przechowaj >= 1e21 && przechowaj < 1e24){ 
-         h2.textContent = (przechowaj/1e21).toFixed(2)+" Sextilion";
-     }else if(przechowaj >= 1e24 && przechowaj < 1e27){ 
-         h2.textContent = (przechowaj/1e24).toFixed(2)+" Septilion";
-     }else if(przechowaj >= 1e27 && przechowaj < 1e30){ 
-         h2.textContent = (przechowaj/1e27).toFixed(2)+" Octilion";
-     }else if(przechowaj >= 1e30 && przechowaj < 1e33){ 
-         h2.textContent = (przechowaj/1e30).toFixed(2)+" Nonilion";
-     }else if(przechowaj >= 1e33){ 
-         h2.textContent = (przechowaj/1e33).toFixed(2)+" Decilion";
-     }else {
-         h2.textContent = przechowaj;
-     }
- }
- function clicker(){
-     Defvalue += ClickValue;
-     wyswietl();
- }
- function startpszczola(){
-     if(Defvalue >= costp){
-         pszczeliczba+=1;
-         Defvalue -= costp;
-         costp = pszczeliczba*pszczeliczba+10;
-         wyswietl();
-         if(t==null){
-             t = setInterval(pszczola, 2000);
-         }
-         var p1 = document.querySelector('p1');
-         p1.textContent = "Ilość pszczół:" + pszczeliczba + " Cena pszczoły:" + costp;
+// pozdro dla was
+let money = 0
 
-     } else {
+let pszczoly = [
+    { nazwa: "Pszczola", cena: 10, coIle: 2000, ile: 0, interval: null, klasa: 'xd1'},
+    { nazwa: "Super Pszczola", cena: 100, coIle: 1000, ile: 0, interval: null },
+    { nazwa: "SSJPszczola", cena: 300, coIle: 800, ile: 0, interval: null },
+    { nazwa: "Magnum Pszczola", cena: 500, coIle: 500, ile: 0, interval: null },
+    { nazwa: "Pronto Pszczola", cena: 1000, coIle: 100, ile: 0, interval: null },
+    { nazwa: "Mistrzowska Pszczola", cena: 2000, coIle: 50, ile: 0, interval: null },
+    { nazwa: "J.K - Bzykke", cena: 5000, coIle: 10, ile: 0, interval: null },
+]
+let upgrade = [
+    { nazwa: "ModPszczola", cena: 2500, ile: 0 },
+    { nazwa: "ModSPszczola", cena: 5000, ile: 0 },
+    { nazwa: "ModSSJPszczola", cena: 7500, ile: 0 },
+    { nazwa: "ModMPszczola", cena: 10000, ile: 0 },
+    { nazwa: "ModPPszczola", cena: 15000, ile: 0 },
+    { nazwa: "ModMSPszczola", cena: 20000, ile: 0 },
+    { nazwa: "ModBzykke", cena: 50000, ile: 0 },
 
-     }
-     
- }
- function pszczola(){
-     Defvalue = Defvalue+1*pszczeliczba;
-     wyswietl();
-     
- }
- function PerClick(){
-     if(Defvalue >= costc){
-         ClickValue +=1;
-         Defvalue -= costc;
-         costc = ClickValue*ClickValue;
-         wyswietl();
-         var p2 = document.querySelector('p2');
-         p2.textContent = "Wartość kliknięcia:" + ClickValue + " Cena:" + costc;
+]
 
-     }
-     
-     
-     
- }
- function startsuperpszczola(){
-     if(Defvalue >= costsp){
-         spszczeliczba+=1;
-         Defvalue -= costsp;
-         costsp = spszczeliczba*spszczeliczba*5+100;
-         wyswietl();
-         if(t1 == null){
-             t1 = setInterval(spszczola, 1000);
-         }
-         var p3 = document.querySelector('p3');
-         p3.textContent = "Ilość Spszczół:" + spszczeliczba + " Cena Spszczoły:" + costsp;
-     } else {
+let clickCost = 5;
+let clickValue = 1;
 
-     }
- }
- function spszczola(){
-     Defvalue = Defvalue+1*spszczeliczba;
-     wyswietl();
- }
- function startssjpszczola(){
-     if(Defvalue >= costssjp){
-         ssjpszczeliczba+=1;
-         Defvalue -= costssjp;
-         costssjp = ssjpszczeliczba*ssjpszczeliczba*15+300;
-         wyswietl();
-         if(t2 == null){
-             t2 = setInterval(ssjpszczola, 800);
-         }
-         var p4 = document.querySelector('p4');
-         p4.textContent = "Ilość pszczół:" + ssjpszczeliczba + " Cena pszczoły:" + costssjp;
-     } else {
+let currentmoney = document.querySelector('.currentmoney');
+function wyswietl() {
+    let przechowaj = money;
+    if (przechowaj >= 1e3 && przechowaj < 1e6) {
+        currentmoney.textContent = (przechowaj / 1e3).toFixed(2) + " Thousand";
+    } else if (przechowaj >= 1e6 && przechowaj < 1e9) {
+        currentmoney.textContent = (przechowaj / 1e6).toFixed(2) + " Milion";
+    } else if (przechowaj >= 1e9 && przechowaj < 1e12) {
+        currentmoney.textContent = (przechowaj / 1e9).toFixed(2) + " Bilion";
+    } else if (przechowaj >= 1e12 && przechowaj < 1e15) {
+        currentmoney.textContent = (przechowaj / 1e12).toFixed(2) + " Trilion";
+    } else if (przechowaj >= 1e15 && przechowaj < 1e18) {
+        currentmoney.textContent = (przechowaj / 1e15).toFixed(2) + " Quadrilion";
+    } else if (przechowaj >= 1e18 && przechowaj < 1e21) {
+        currentmoney.textContent = (przechowaj / 1e18).toFixed(2) + " Pentilion";
+    } else if (przechowaj >= 1e21 && przechowaj < 1e24) {
+        currentmoney.textContent = (przechowaj / 1e21).toFixed(2) + " Sextilion";
+    } else if (przechowaj >= 1e24 && przechowaj < 1e27) {
+        currentmoney.textContent = (przechowaj / 1e24).toFixed(2) + " Septilion";
+    } else if (przechowaj >= 1e27 && przechowaj < 1e30) {
+        currentmoney.textContent = (przechowaj / 1e27).toFixed(2) + " Octilion";
+    } else if (przechowaj >= 1e30 && przechowaj < 1e33) {
+        currentmoney.textContent = (przechowaj / 1e30).toFixed(2) + " Nonilion";
+    } else if (przechowaj >= 1e33 && przechowaj <1e39) {
+        currentmoney.textContent = (przechowaj / 1e33).toFixed(2) + " Decilion";
+    } else if (przechowaj >= 1e39) {
+            currentmoney.textContent = " Infinity";
+    } else {
+        currentmoney.textContent = przechowaj;
+    }
+    Bps();
+    let wskazanie = document.querySelector('.wskaznik');
+    if (pszczoly[0].ile >= 10) {
+        wskazanie.textContent = "Beecome a Beecker!"
+    } if (pszczoly[1].ile >= 10) {
+        wskazanie.textContent = "Just Bee Yourself!"
+    } if (pszczoly[2].ile >= 10) {
+        wskazanie.textContent = "Beefriend Me!"
+    } if (pszczoly[3].ile >= 10) {
+        wskazanie.textContent = "Are you Beesexual?"
+    } if (pszczoly[4].ile >= 10) {
+        wskazanie.textContent = "Bee Me, Me Bee"
+    } if (pszczoly[5].ile >= 10) {
+        wskazanie.textContent = "Bee My BeeMaster!"
+    } if (pszczoly[6].ile >= 10) {
+        wskazanie.textContent = "WOLNY BZYNEK!"
+    }
+}
+function clicker() {
+    money += clickValue;
+    wyswietl();
+}
+function perClick() {
+    if (money >= clickCost) {
+        clickValue += 1;
+        money -= clickCost;
+        clickCost = clickValue * clickValue;
+        wyswietl();
+        let wskazanie2 = document.querySelector('.wskaznik2');
+        wskazanie2.textContent = "Wartość kliknięcia:" + clickValue + " Cena:" + clickCost;
+    }
+}
+let divs = document.querySelectorAll('.pszczola')
+let divs2 = document.querySelectorAll('.upgrader')
 
-     }
- }
- function ssjpszczola(){
-     Defvalue = Defvalue+1*ssjpszczeliczba;
-     wyswietl();
- }
- function startmagnpszczola(){
-     if(Defvalue >= costmagnp){
-         magnpszczeliczba+=1;
-         Defvalue -= costmagnp;
-         costmagnp = magnpszczeliczba*magnpszczeliczba*30+500;
-         wyswietl();
-         if(t3 == null){
-             t3 = setInterval(magnpszczola, 500);
-         }
-         var p5 = document.querySelector('p5');
-         p5.textContent = "Ilość pszczół:" + magnpszczeliczba + " Cena pszczoły:" + costmagnp;
-     } else {
+for (let i = 0; i < divs.length; i++) {
+    let pszczola = pszczoly[i]
+    divs[i].querySelector('button').addEventListener('click', () => {
+        if (money >= pszczola.cena) {
+            pszczola.ile += 1;
+            money -= pszczola.cena;
+            pszczola.cena = Math.round(pszczola.cena * 1.3)
+            wyswietl();
+            console.log(divs[i])
+            let p = divs[i].querySelector('p');
+            p.textContent = "Ilość pszczół:" + pszczola.ile + " Cena:" + pszczola.cena;
+        }
+    })
 
-     }
- }
- function magnpszczola(){
-     Defvalue = Defvalue+1*magnpszczeliczba*2;
-     wyswietl();
- }
+    pszczola.interval = setInterval(() => {
+        money += pszczola.ile
+        wyswietl()
+    }, pszczola.coIle)
+}
+for (let i = 0; i < divs2.length; i++) {
+    let upgrader = upgrade[i]
+    const btn = divs2[i].querySelector('img')
+    btn.addEventListener('click', () => {
+        if (money >= upgrader.cena) {
+            upgrader.ile += 1;
+
+            if (upgrader.ile === 0) {
+                money -= upgrader.cena;
+                pszczoly[i].coIle /= 2
+                clearInterval(pszczoly[i].interval)
+                pszczoly[i].interval = setInterval(() => {
+                    money += pszczoly[i].ile
+                    wyswietl()
+                }, pszczoly[i].coIle)
+            } else {
+                if (!btn.wyczerpany) {
+                    console.log(btn.parentElement.parentElement.querySelector('.xd').classList.add('hidden'))
+                    btn.src = "img/pixelart/Deny.png"
+                    btn.wyczerpany = true
+                }
+            }
+
+            wyswietl();
+        }
+    })
+}
+function Bps() {
+    let Bps = 0;
+    for (let i = 0; i < pszczoly.length; i++) {
+        Bps += 1000 / pszczoly[i].coIle * pszczoly[i].ile
+    }
+    let wskazanie3 = document.querySelector('.wskaznik3');
+    wskazanie3.textContent = "Bps: " + Bps;
+}
+

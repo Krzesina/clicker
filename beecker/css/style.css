@@ -1,10 +1,3 @@
-/**
-* Template Name: MaxiBiz
-* Template URL: https://templatemag.com/maxibiz-bootstrap-business-template/
-* Author: TemplateMag.com
-* License: https://templatemag.com/license/
-*/
-
 * {
   margin: 0;
   padding: 0px;
@@ -565,26 +558,76 @@ button:hover, button:focus, .button:hover, .button:focus {
     padding: 0 15px;
   }
 }
-.addon-content{
+
+.addon-content, .upgrade-content{
   border: 0.5px solid #f1c40f;
   border-radius: 5px;
   padding: 4px 4px;
   background: #fff;
-  text-align: center;
+  color: #2B2E31;
+}
+.addon-content{
   display: flex;
   flex-direction: column;
-  color: #2B2E31;
-  align-items: start;
-
+  text-align: left;
 }
 
-.addon-item{
-  list-style-type:none;
-  margin-top: 2px;
+.upgrade-content{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 .addon-item button{
-  margin: 0px;
+  margin: 2px 0 0 0;
 }
 
+.addon-item p{
+  color: black;
+  margin: 0px;
+  font-size: 80%;
+}
 
+.upgrade-item{
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  width: 40px;
+}
+
+.upgrade-item:hover{
+  text-align: left;
+  background-color: black;
+  height: 40px;
+  width: max-content;
+}
+
+.upgrade-item:hover .xd{
+  display: block;
+  color:white;
+  padding: 1px;
+  max-height: 40px;
+  width: fit-content;
+  border: 0.5px solid black;
+  border-radius: 5px;
+}
+
+.upgrade-item button{
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+}
+
+.upgrade-item button img{
+  height: 40px;
+  width: 40px;
+}
+
+.xd{
+  display: none;
+  font-size: 80%;
+  line-height: 100%;
+  margin: 0px;
+  padding: 1px;
+}

@@ -62,48 +62,83 @@
   <section class="section">
       <div class="container">
         <div class="col-lg-8 col-md-8 col-sm-12 pad" data-effect="slide-top">
-            <h2>0</h2>
+          <h2 class="currentmoney">0</h2>
+          <h2 class="wskaznik3">Bps: 0</h2>
+          <h2 class="wskaznik">???</h2>
         </div>
         <div class="col-lg-8 col-md-8 col-sm-12 pad" data-effect="slide-left">
             <img id="btn" class="beebutton" src="img/bee.jpg" onclick="beeanimate(); clicker()">
         </div>
         <!-- mainbee -->
         <div class="addons col-lg-4 col-md-4 col-sm-12 align-center" data-effect="slide-right">
-            <h4>Addons</h4>
-            <div class="addons-container">
-              <div class="addon-content">
-                <div class="addon-item">
-                  <button id="addon-btn btn1" onclick="PerClick()">ClickMagnituder</button>
+          <h4>Addons</h4>
+            <div class="addon-content">
+              <div class="addon-item">
+                <button id="addon-btn" onclick="perClick()">ClickMagnituder</button>
+              </div>
+              <div class="addon-item">
+                <p class="wskaznik2">Wartość kliknięcia:1 Cena:5</p>
+              </div>
+              <div class="addon-item pszczola">
+                <button>Pszczola</button><br>
+                <p>Ilość pszczół:0 Cena:10</p>
+              </div>
+              <div class="addon-item pszczola">
+                <button>Super Pszczola</button><br>
+                <p>Ilość pszczół:0 Cena:100</p>
+              </div>
+              <div class="addon-item pszczola">
+                <button>SSJPszczola</button><br>
+                <p>Ilość pszczół:0 Cena:300</p>
+              </div>
+              <div class="addon-item pszczola">
+                <button>Magnum Pszczola</button><br>
+                <p>Ilość pszczół:0 Cena:500</p>
+              </div>
+              <div class="addon-item pszczola">
+                <button>Pronto Pszczola</button><br>
+                <p>Ilość pszczół:0 Cena:1000</p>
+              </div>
+              <div class="addon-item pszczola">
+                <button>Mistrzowska Pszczola</button><br>
+                <p>Ilość pszczół:0 Cena:2000</p>
+              </div>
+              <div class="addon-item pszczola">
+                <button>J.K - Bzykke</button><br>
+                <p class="ilosc_pszczol">Ilość pszczół:0 Cena:5000</p>
+              </div>
+            </div>
+            <h4>Upgrades</h4>
+            <div class="upgrade-content">
+                <div class="upgrade-item upgrader">
+                  <button><img src="img/pixelart/Bee1.png"></button>
+                  <p class="xd">nazwa: pszczola<br>cena: 2500</p>
                 </div>
-                <div class="addon-item">
-                  <p2>Wartość kliknięcia:1 Cena:5</p2>
+                <div class="upgrade-item upgrader">
+                  <button><img src="img/pixelart/Bee2.png"></button>
+                  <p class="xd">nazwa: Super Pszczola<br>cena: 5000</p>
                 </div>
-                <div class="addon-item">
-                  <button id="addon-btn btn2" onclick="startpszczola()">Pszczola</button>
+                <div class="upgrade-item upgrader">
+                  <button><img src="img/pixelart/Bee3.png"></button>
+                  <p class="xd">nazwa:  SSJPszczola<br>cena: 7500</p>
                 </div>
-                <div class="addon-item">
-                  <p1>Ilość pszczół:0 Cena:10</p1>
+                <div class="upgrade-item upgrader">
+                  <button><img src="img/pixelart/Bee4.png"></button>
+                  <p class="xd">nazwa: Magnum Pszczola<br>cena: 10000</p>
                 </div>
-                <div class="addon-item">
-                  <button id="addon-btn btn3" onclick="startsuperpszczola()">SuperPszczola</button>
+                <div class="upgrade-item upgrader">
+                  <button><img src="img/pixelart/Bee5.png"></button>
+                  <p class="xd">nazwa: Pronto Pszczola<br>cena: 15000</p>
                 </div>
-                <div class="addon-item">
-                  <p3>Ilość pszczół:0 Cena:100</p3>
+                <div class="upgrade-item upgrader">
+                  <button><img src="img/pixelart/Bee6.png"></button>
+                  <p class="xd">nazwa: Mistrzowska Pszczola<br>cena: 20000</p>
                 </div>
-                <div class="addon-item">
-                  <button id="addon-btn btn4" onclick="startssjpszczola()">SSJPszczola</button>
-                </div>
-                <div class="addon-item">
-                  <p4>Ilość pszczół:0 Cena:300</p4>
-                </div>
-                <div class="addon-item">
-                  <button id="addon-btn btn5" onclick="startmagnpszczola()">MagnumPszczola</button>
-                </div>
-                <div class="addon-item">
-                  <p5>Ilość pszczół:0 Cena:500</p5>
+                <div class="upgrade-item upgrader">
+                  <button><img src="img/pixelart/Bzykke.png"></button>
+                  <p class="xd">nazwa: J.K - Bzykke<br>cena: 50000</p>
                 </div>
             </div>
-        </div>
         <!-- addons -->
       </div>
       <!-- end container -->
