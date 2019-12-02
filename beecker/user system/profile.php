@@ -29,9 +29,8 @@ else {
     
     echo '<h1>Profil użytkownika '.$profile['login'].'</h1>';
 
-    echo '<b>Nick:</b> '.$profile['login'].'<br />';
-    echo '<b>Email:</b> '.$profile['email'].'<br />';
-
+    echo '<b>Nickname:</b> '.$profile['login'].'<br />';
+ 
 }
 
 ?>
