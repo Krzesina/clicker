@@ -18,7 +18,7 @@ if (isset($_POST['send'])) {
 
 
    
-    if (!$login || !$email || !$pass || !$pass_v || !$email_v ) $errors .= '- Musisz wypełnić wszystkie pola<br />';
+    if (!$login || !$pass || !$pass_v ) $errors .= '- Musisz wypełnić wszystkie pola<br />';
     if ($existsLogin[0] >= 1) $errors .= '- Ten login jest zajęty<br />';
     if ($pass != $pass_v)  $errors .= '- Hasła się nie zgadzają<br />';
 
@@ -41,7 +41,7 @@ if (isset($_POST['send'])) {
 ?>
 
 <form method="post" action="">
- <label for="login">Login:</label>
+ <label for="login">Nickname:</label>
  <input maxlength="32" type="text" name="login" id="login" />
 
  <label for="pass">Hasło:</label>
