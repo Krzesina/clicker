@@ -35,7 +35,7 @@ if (isset($_POST['send'])) {
         mysqli_query($conn, "INSERT INTO users (login, pass) VALUES('$login','$pass');") or die ('<p class="error">Wystąpił błąd w zapytaniu i nie udało się zarejestrować użytkownika.</p>');
 
         echo '<p class="success">'.$login.', zostałeś zarejestrowany.
-        <br /><a href="login.php">Logowanie</a></p>';
+        <br /><a href="login.html">Logowanie</a></p>';
     }
 }
 ?>
